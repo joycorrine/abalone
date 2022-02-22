@@ -38,7 +38,7 @@ Here is an overview of the first few lines of data.  We have nine features and 4
 with st.expander("Abalone Shell Features ", expanded=False):
     st.write(
         """    
-- **Sex**: Male (M), Female (F), Infant (F
+- **Sex**: Male (M), Female (F), Infant (I)
 - **Length**: Longest shell measurement
 - **Diameter**: Perpendicular to length
 - **Height**: With meat in shell
@@ -62,8 +62,8 @@ And here are the summary statistics.
 st.dataframe(abalone_data.describe())
 
 st.markdown('''
-Looking at a heatmap of the data, we can see that age is most correlated with height 
-    and shell weight and least correlated with shucked weight.
+Looking at a heatmap of the data, we can see that age is most correlated with _Height_ 
+    and _Shell weight_ and least correlated with _Shucked weight_.
 ''')
 
 fig, ax = plt.subplots()
@@ -109,7 +109,11 @@ an important discovery.**
 I compared my model’s worst and best predictions (in terms of absolute difference 
     between the predicted value and real value) and found that my model performed 
     well at predicting ages around 12.5 and below, but did not perform as well 
-    predicting older abalones (20+ years old). 
+    predicting older abalones (20+ years old).
+
+Below you can see the top three worst predicted values - abalone 628, 678, and 233. They are all older than 22.5 years old,
+    and the my model prediction was 11-14 years off for each of them. You can also see younger abalones - abalone 462,
+    2983, and 3043. My model perfectly predicted their ages.
 
 ''')
 
@@ -119,13 +123,13 @@ diffdata = {'Abalone': [628, 678, 2333, 462, 2983, 3043],
         'Difference': [10.62, 10.34, 10.01, 0, 0, 0]
         
         }
-diff = pd.DataFrame(diffdata)
+diff = pd.DataFrame(diffdata, index_col=None)
 diff.set_index('Abalone') 
 
 st.dataframe(diff)
 
 st.markdown('''
-I decided to take a deeper dived into my multiple regression model to better understand where 
+I decided to take a deeper dive into my multiple regression model to better understand where 
     the cutoff was for my model’s performance. Below you can see how the RMSE score to 
     evaluate my model increases as the age threshold for my abalones increases.
 
@@ -139,7 +143,7 @@ st.markdown('''
 
 In conclusion, I would be confident using the multiple regression model for abalones 
 aged 12.5+ or younger, but for older abalones, I would either: 
-- 1) Build a new model which takes into account the skewed performance on older abalones, or 
-- 2) Stick to counting the shell rings under a microscope. :)  
+    1) Build a new model which takes into account the skewed performance on older abalones, or 
+    2) Stick to counting the shell rings under a microscope. :)  
 
 ''')
