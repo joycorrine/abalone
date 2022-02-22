@@ -1,0 +1,6 @@
+altair==4.2.0
+matplotlib==3.4.3
+pandas==1.1.1
+seaborn==0.11.2
+streamlit==1.5.1
+pillow==8.2.0
