@@ -113,7 +113,8 @@ I compared my model’s worst and best predictions (in terms of absolute differe
 
 Below you can see the top three worst predicted values - abalone 628, 678, and 233. They are all older than 22.5 years old,
     and my model prediction was 11-14 years off for each one of them. You can also see the results for the younger abalones - abalone 462,
-    2983, and 3043. My model perfectly predicted their ages.
+    2983, and 3043. My model perfectly predicted their ages.This implies my model becomes less reliable as I add in more older
+    abalones into my dataset.
 
 ''')
 
