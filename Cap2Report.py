@@ -123,7 +123,7 @@ diffdata = {'Abalone': [628, 678, 2333, 462, 2983, 3043],
         'Difference': [10.62, 10.34, 10.01, 0, 0, 0]
         
         }
-diff = pd.DataFrame(diffdata, index_col=None)
+diff = pd.DataFrame(diffdata)
 diff.set_index('Abalone') 
 
 st.dataframe(diff)
