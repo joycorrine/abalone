@@ -152,7 +152,7 @@ Instead of using a linear-based model, I attempted improve one of my non-linear 
 st.markdown('''
 ### Conclusion
 
-In conclusion, I would be confident using the multiple regression model for abalones 
+In conclusion, I would be confident using the multiple variate regression model for abalones 
 aged 12.5+ or younger, but for older abalones, I would either:
 - 1. Build a new model which takes into account the skewed performance on older abalones, or 
 - 2. Stick to counting the shell rings under a microscope. :)  
